@@ -41,6 +41,8 @@
 - 스미싱 문자 / 정상 문자 이진 분류
 - 실제 사례 기반 문구 구성
 - 다양한 도메인(금융, 택배, 공공기관 등) 포함
+  <img width="309" height="188" alt="image" src="https://github.com/user-attachments/assets/4e69595f-6a1f-45f3-ad7e-51d73cccce4b" />
+
 
 데이터셋은 모델 학습뿐만 아니라 **공정한 성능 비교를 위한 벤치마크** 용도로 활용할 수 있도록 구성되었습니다.
 
