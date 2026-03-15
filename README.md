@@ -1,4 +1,4 @@
-# 📱 Kor-Smishing Dataset & Benchmark
+# 📱 K-Smishing Dataset & Benchmark
 > **스미싱(Smishing) 탐지 AI 모델 학습을 위한 한국어 데이터셋 및 성능 평가 지표**
 
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/jmjmjm3/kor-smishing-message)
