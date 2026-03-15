@@ -1,86 +1,77 @@
-📱 스미싱(Smishing) 탐지 AI를 위한 데이터셋 구축 및 벤치마크
-1. 스미싱의 위험성
+# 📱 Kor-Smishing Dataset & Benchmark
+> **스미싱(Smishing) 탐지 AI 모델 학습을 위한 한국어 데이터셋 및 성능 평가 지표**
 
-스미싱(Smishing)은 SMS(Short Message Service)와 피싱(Phishing)의 합성어로, 문자 메시지를 통해 악성 링크 클릭이나 개인정보 입력을 유도하는 사이버 범죄입니다.
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/jmjmjm3/kor-smishing-message)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-최근 스미싱 공격은 단순한 링크 유도 수준을 넘어 다음과 같은 방식으로 점점 정교해지고 있습니다.
+---
 
-택배 배송 안내 사칭
+## 1. 🚨 프로젝트 배경 및 위험성
+**스미싱(Smishing)**은 SMS와 피싱(Phishing)의 합성어로, 문자 메시지를 통해 악성 링크 클릭이나 개인정보 입력을 유도하는 지능형 사이버 범죄입니다.
 
-공공기관 및 정부기관 사칭
+* **정교한 사칭:** 택배 배송, 공공기관, 금융 인증 절차 등을 완벽히 모방합니다.
+* **지능적 진화:** 일상적인 문구를 교묘하게 활용하여 단순 필터링을 우회합니다.
+* **사회적 문제:** 개인정보 유출을 넘어 심각한 금전적 피해와 2차 범죄로 이어집니다.
 
-금융 서비스 또는 인증 절차 위장
+---
 
-이처럼 일상적인 문구를 정교하게 모방하는 공격이 증가하면서, 금전적 피해뿐만 아니라 개인정보 유출 및 2차 범죄로 이어지는 심각한 사회적 문제가 발생하고 있습니다.
+## 2. 🧠 AI 기반 탐지의 필요성
+기존의 **규칙 기반(Rule-based)** 방식은 변칙적인 문구와 신종 패턴 대응에 한계가 있습니다.
 
-2. 스미싱 탐지를 위한 AI의 필요성
+| 구분 | 기존 규칙 기반 방식 | AI 기반 NLP 모델 |
+| :--- | :--- | :--- |
+| **대응 방식** | 특정 키워드 매칭 | 문맥 및 의도 파악 |
+| **유연성** | 문구 변형에 취약함 | 신종 패턴에 유연하게 대응 |
+| **정확도** | 오탐(False Positive) 발생 높음 | 정밀한 탐지 가능 |
 
-기존의 스미싱 탐지 방식은 주로 규칙 기반(rule-based) 또는 키워드 중심 필터링에 의존합니다.
-그러나 이러한 방식은 다음과 같은 한계를 가지고 있습니다.
+---
 
-문구 변형에 취약함
+## 3. 📊 데이터셋 구축 개요 (Dataset)
+본 프로젝트는 한국어 환경에 최적화된 스미싱 탐지 AI 학습을 위해 고품질 데이터셋을 구축하였습니다.
 
-새로운 스미싱 패턴에 대한 대응 지연
+### 📌 데이터셋 주요 특징
+* **분류:** 스미싱 문자(Smishing) / 정상 문자(Ham) 이진 분류
+* **도메인:** 금융, 택배, 공공기관, 지인 사칭 등 실제 사례 중심 구성
+* **활용도:** 모델 학습 및 공정한 성능 비교를 위한 벤치마크 데이터로 활용 가능
 
-정상 메시지를 스미싱으로 판단하는 오탐(False Positive) 증가
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/407e4e51-0bc5-45be-aeb8-96caa646ffc9" width="400" />
+</p>
 
-이에 따라 문맥과 의미를 이해할 수 있는 AI 기반 탐지 모델의 필요성이 증가하고 있습니다.
-특히 자연어 처리(NLP) 기반 모델은 메시지의 의도와 맥락을 학습하여 보다 정밀한 스미싱 탐지가 가능합니다.
+> **Hugging Face 주소:** [jmjmjm3/kor-smishing-message](https://huggingface.co/datasets/jmjmjm3/kor-smishing-message)
 
-3. 데이터셋 구축 개요
+---
 
-본 프로젝트에서는 스미싱 탐지 AI 모델의 학습 및 평가를 위한 데이터셋을 구축하였습니다.
+## 4. 📈 벤치마크 및 모델 평가 (Benchmark)
+다양한 AI 모델을 활용해 스미싱 탐지 성능을 실험하고 분석하였습니다.
 
-데이터셋 특징
+### 📉 실험 결과 요약
+본 벤치마크 결과는 향후 스미싱 대응 시스템 개발 시 최적의 모델을 선택하는 기초 자료로 활용될 수 있습니다.
 
-이진 분류(Binary Classification)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/83fe273c-4a6e-4bb2-828a-1538071698bf" width="80%" />
+  <br>
+  <img src="https://github.com/user-attachments/assets/518bdb2e-6822-4165-a91c-0de8547c33ee" width="80%" />
+</p>
 
-스미싱 문자 (Smishing)
+---
 
-정상 문자 (Normal)
+## 5. ✨ 기대 효과
+* **표준화:** 스미싱 탐지 연구를 위한 한국어 표준 데이터셋 제공
+* **객관성:** 모델 간 성능 비교를 위한 명확한 벤치마크 기준 제시
+* **실용성:** 실제 서비스 적용이 가능한 수준의 정교한 데이터 구성
 
-실제 사례 기반 메시지 구성
+---
 
-다양한 도메인 포함
+## 🛠️ Quick Start
+데이터셋을 프로젝트에 바로 적용해 보세요.
 
-금융
+```python
+from datasets import load_dataset
 
-택배 및 배송
+# 데이터셋 불러오기
+dataset = load_dataset("jmjmjm3/kor-smishing-message")
 
-공공기관
-
-인증 및 결제
-
-본 데이터셋은 모델 학습뿐만 아니라 공정한 성능 비교를 위한 벤치마크 용도로 활용할 수 있도록 설계되었습니다.
-
-데이터셋 공개
-
-데이터셋은 다음 Hugging Face 저장소에서 확인할 수 있습니다.
-
-https://huggingface.co/datasets/jmjmjm3/kor-smishing-message
-
-4. 벤치마크 및 모델 성능 평가
-
-구축된 데이터셋을 활용하여 여러 AI 모델을 대상으로 벤치마크 실험을 수행하였습니다.
-
-실험을 통해 다음을 분석하였습니다.
-
-모델별 스미싱 탐지 성능 비교
-
-모델 구조에 따른 탐지 정확도 차이
-
-실제 서비스 환경에서의 적용 가능성
-
-이러한 분석 결과는 향후 스미싱 대응 AI 시스템 개발을 위한 기초 자료로 활용될 수 있습니다.
-
-5. 기대 효과
-
-본 프로젝트는 다음과 같은 기여를 목표로 합니다.
-
-스미싱 탐지 연구를 위한 표준 데이터셋 제공
-
-다양한 AI 모델 간 객관적인 성능 비교 기준 제시
-
-실제 서비스 적용을 고려한 실용적인 데이터 구성
-
-본 데이터셋과 벤치마크 결과가 스미싱으로 인한 사회적 피해를 줄이는 데 기여하기를 기대합니다.
+# 예시 데이터 출력
+print(dataset['train'][0])
